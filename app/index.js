@@ -2,31 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const router = require('./routes');
 const app = express();
+const corsOptionsSetUp = require('./tools/corsOptionsSetUp');
 
 // Dynamic Cors
-const allowlist = ['http://localhost:3000'];
+app.use(cors(corsOptionsSetUp));
 
-var corsOptionsDelegate = function (req, callback) {
+// parsing payload JSON & urlencoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-    const corsOptions = {
-        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'UPDATE'],
-        credentials: true,
-    };
-
-    if (allowlist.indexOf(req.header('Origin')) !== -1) {
-        corsOptions.origin = true;
-    } else {
-        corsOptions.origin = false;
-    };
-    callback(null, corsOptions)
-};
-
-console.log('test à la plage et à chateau gont');
-
-app.use(
-    cors(corsOptionsDelegate),
-);
-
+// routing
 app.use(router);
 
 module.exports = app;

@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=recipesApp
+
+initdb 2022-09-04T13:30:35Z Killian AUDIC <killi@LAPTOP-5GJ086M6> # crÃ©ation des tables
+detailed_recipe 2022-09-05T09:44:44Z Killian AUDIC <killi@LAPTOP-5GJ086M6> # detailed recipes with ingredients and units
