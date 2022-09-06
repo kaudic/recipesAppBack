@@ -40,9 +40,11 @@ const insertQueryGenerator = (object) => {
      * @returns {array<string,string,array>} - Array containing a string of column names, string of placeholders and array of values
 */
 
-const updateQueryGenerator = (object) => {
+const updateQueryGenerator = (object, options = { countStarter: 2 }) => {
+    const { countStarter } = options;
+
     let setStatement = 'SET ';
-    let i = 2; // we keep $1 placeHolder for the id of the row to modify
+    let i = parseInt(countStarter); // we keep $1 placeHolder for the id of the row to modify by default
     const values = [];
 
     for (const key in object) {

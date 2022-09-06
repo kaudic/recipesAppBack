@@ -53,7 +53,7 @@ INSERT INTO "ingredient" ("name","main_unit_id") VALUES
 
 CREATE TABLE "recipe_ingredient" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "recipe_id" INT NOT NULL REFERENCES "recipe" ("id"),
+    "recipe_id" INT NOT NULL REFERENCES "recipe" ("id") ON DELETE CASCADE,
     "ingredient_id" INT NOT NULL REFERENCES "ingredient" ("id"),
     "qty" REAL NOT NULL,
     "unit_id" INT NOT NULL REFERENCES "unit" ("id")

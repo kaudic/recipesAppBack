@@ -3,6 +3,7 @@ const express = require('express');
 const validate = require('../../validation/validator');
 const schemaCreate = require('../../validation/schemas/recipeCreateSchema');
 const schemaUpdate = require('../../validation/schemas/recipeUpdateSchema');
+const sanitizeBody = require('../../validation/sanitizeHtml');
 
 const { recipeController: controller } = require('../../controllers/api');
 const controllerHandler = require('../../helpers/controllerHandler');
@@ -23,7 +24,7 @@ router
      * @summary Create a new recipe
      * @tags Recipe
      * @param {InputRecipe} request.body.required - category info
-     * @return {Recipe} 200 - success response - application/json
+     * @return {array<Recipe>} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
     .post(validate('body', schemaCreate), controllerHandler(controller.create));
@@ -62,5 +63,16 @@ router
      */
     .delete(controllerHandler(controller.delete));
 
+/**
+ * POST /api/recipes/search
+ * @summary Look for all recipes containing a string in (title, reference, ingredients or text)
+ * @tags Recipe
+ * @param {InputSearchString} request.body.required - string to look for
+ * @return {array<Recipe>} 200 - success response - application/json
+ * @return {ApiError} 400 - Bad request response - application/json
+ */
+router
+    .route('/search')
+    .post(sanitizeBody(), controllerHandler(controller.search));
 
 module.exports = router;

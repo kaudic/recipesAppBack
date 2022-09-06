@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP TABLE "recipe", "type", "ingredient", "unit","recipe_ingredient";
+DROP TABLE "recipe", "type", "ingredient", "unit","recipe_ingredient" CASCADE;
 
 COMMIT;

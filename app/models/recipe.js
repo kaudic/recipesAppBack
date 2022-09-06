@@ -1,6 +1,6 @@
 const client = require('../config/db');
 const { ApiError } = require('../helpers/errorHandler');
-const { insertQueryGenerator, updateQueryGenerator } = require('../tools/columnsAndPlaceholdersGenerator');
+const { insertQueryGenerator, updateQueryGenerator } = require('../tools/queryGenerator');
 
 /**
  * @typedef {object} Recipe
