@@ -13,7 +13,7 @@ module.exports = {
             return undefined;
         }
 
-        return result.rows[0];
+        return result.rows;
     },
 
     /**
@@ -37,8 +37,9 @@ module.exports = {
      * Modify in jump table the unit or quantity for a given link (link is recipeId and IngredientId)
      */
 
-    async update({ recipeid, ingredientId, recipeIngredientUnitAndQty }) {
+    async update(recipeId, ingredientId, recipeIngredientUnitAndQty) {
         const [setStatement, values] = updateQueryGenerator(recipeIngredientUnitAndQty, { countStarter: 3 });
+        console.log(setStatement);
         const result = await client.query(`UPDATE recipe_ingredient ${setStatement} WHERE recipe_id = $1 AND ingredient_id=$2`, [recipeId, ingredientId, ...values]);
 
         if (result.rowCount === 0) {

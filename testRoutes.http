@@ -1,0 +1,190 @@
+################################################################################
+# Fichier de test des routes HTTP de l'API
+# Nécessite l'extension REST Client pour VSCode
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+################################################################################
+@endpoint = http://localhost:{{$dotenv PORT}}/api
+
+### 404
+GET {{ endpoint }}/recipess
+
+### Recipes PART ----------------------------------------------------------
+
+### List of recipes
+GET {{ endpoint }}/recipes
+
+### Get a recipe with ingredients with recipeId
+GET {{ endpoint }}/recipes/1
+
+### Recipe Not Found: Get a recipe with ingredients with WRONG recipeId 
+GET {{ endpoint }}/recipes/2000
+
+### Create a recipe with error
+POST {{ endpoint }}/recipes
+content-type: application/json
+
+{
+  "title": "Lentilles et viande hachée",
+  "reference": "La mer Jesta ...",
+  "imgName": "lentilles.jpg",
+  "text": "toto va à la mer",
+  "mealQty": 4,
+  "cookingTime": {
+      "minutes": 25
+    },
+  "preparation_time": "00:20:00",
+  "type_id": 2,
+  "ingredients": [
+    {
+      "id": 1,
+      "qty": 20,
+      "unitId": 1
+    }
+  ],
+  "lol":"pourt"
+}
+
+### Create a recipe with success
+POST {{ endpoint }}/recipes
+content-type: application/json
+
+{
+  "title": "Lentilles et viande hachée",
+  "reference": "La mer Jesta ...",
+  "imgName": "lentilles.jpg",
+  "text": "toto va à la mer",
+  "mealQty": 4,
+  "cookingTime": "00:30:00",
+  "preparationTime": "00:20:00",
+  "typeId": 2,
+  "ingredients": [
+    {
+      "id": 1,
+      "qty": 20,
+      "unitId": 1
+    }
+  ]
+}
+
+### Update a recipe with success
+PUT {{ endpoint }}/recipes
+content-type: application/json
+
+{
+  "id":5, 
+  "recipe":{
+"title": "Lentilles et viande hachée!",
+  "reference": "La mer Jesta ...",
+  "imgName": "lentilles.jpg",
+  "text": "toto va à la mer",
+  "mealQty": 4,
+  "cookingTime": "00:30:00",
+  "preparationTime": "00:20:00",
+  "typeId": 2,
+  "ingredients": [
+    {
+      "id": 1,
+      "qty": 20,
+      "unitId": 1
+    },
+    {
+      "id": 3,
+      "qty": 10,
+      "unitId": 5
+    }
+  ]
+  } 
+}
+
+### Delete a recipe with success
+DELETE {{ endpoint }}/recipes/4
+
+### Ingredients PART ----------------------------------------------------------
+
+### List of ingredients
+GET {{ endpoint }}/ingredients
+
+### Get an ingredient with its id
+GET {{ endpoint }}/ingredients/1
+
+### Ingredient Not Found: Get an ingredient with WRONG id 
+GET {{ endpoint }}/ingredients/2000
+
+### Create an ingredient with error
+POST {{ endpoint }}/ingredients
+content-type: application/json
+
+{
+  "name": "Lentilles",
+  "mainUnitId": 5,
+  "wrongAttribute": "test"
+}
+
+### Create an ingredient with success
+POST {{ endpoint }}/ingredients
+content-type: application/json
+
+{
+  "name": "Pâtes de riz",
+  "mainUnitId": 5
+}
+
+### Update an ingredient with success
+PUT {{ endpoint }}/ingredients
+content-type: application/json
+
+{
+  "id": 13,
+  "ingredient": {
+    "name": "Pâtes de riz moins calorique",
+    "mainUnitId": 5
+  }
+  
+}
+
+### Delete an ingredient with success
+DELETE {{ endpoint }}/ingredients/12
+
+### Units PART ----------------------------------------------------------
+
+### List of units
+GET {{ endpoint }}/units
+
+### Get a unit with its id
+GET {{ endpoint }}/units/1
+
+### Ingredient Not Found: Get an ingredient with WRONG id 
+GET {{ endpoint }}/units/2000
+
+### Create a unit with error
+POST {{ endpoint }}/units
+content-type: application/json
+
+{
+  "name": "Grammes"
+}
+
+### Create a unit with success
+POST {{ endpoint }}/units
+content-type: application/json
+
+{
+  "name": "Grammes",
+  "shortName": "Gr"
+}
+
+### Update a unit with success
+PUT {{ endpoint }}/units
+content-type: application/json
+
+{
+  "id": 8,
+  "unit": {
+    "name": "Grammes",
+    "shortName": "Gr"
+  }
+  
+}
+
+### Delete an ingredient with success
+DELETE {{ endpoint }}/units/7

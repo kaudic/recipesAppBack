@@ -14,6 +14,7 @@ module.exports = (prop, schema) => async (request, _, next) => {
     try {
         // la "value" on s'en fiche on la récupère pas
         // request['body'] == request.body
+        console.log('I am in the validator.js');
         console.log(request[prop]);
         await schema.validateAsync(request[prop]);
         next();

@@ -27,7 +27,20 @@ router
      * @return {array<Recipe>} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .post(validate('body', schemaCreate), controllerHandler(controller.create));
+    .post(validate('body', schemaCreate), controllerHandler(controller.create))
+    /**
+     * PUT /api/recipes/{id}
+     * @summary Update one recipe
+     * @tags Recipe
+     * @param {number} id.path.required - recipe identifier
+     * @param {InputRecipe} request.body.required - recipe info
+     * @return {Recipe} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - Category not found - application/json
+     */
+    .put(validate('body', schemaUpdate), controllerHandler(controller.update));
+
+
 
 router
     .route('/:id(\\d+)')
@@ -41,17 +54,6 @@ router
      * @return {ApiError} 404 - Category not found - application/json
      */
     .get(controllerHandler(controller.getOne))
-    /**
-     * PUT /api/recipes/{id}
-     * @summary Update one recipe
-     * @tags Recipe
-     * @param {number} id.path.required - recipe identifier
-     * @param {InputRecipe} request.body.required - recipe info
-     * @return {Recipe} 200 - success response - application/json
-     * @return {ApiError} 400 - Bad request response - application/json
-     * @return {ApiError} 404 - Category not found - application/json
-     */
-    .put(validate('body', schemaUpdate), controllerHandler(controller.update))
     /**
      * DELETE /api/recipes/{id}
      * @summary Delete one recipe

@@ -26,7 +26,18 @@ router
      * @return {Unit} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .post(validate('body', schemaCreate), controllerHandler(controller.create));
+    .post(validate('body', schemaCreate), controllerHandler(controller.create))
+    /**
+     * PUT /api/units/{id}
+     * @summary Update one unit
+     * @tags Unit
+     * @param {number} id.path.required - unit identifier
+     * @param {InputUnit} request.body.required - unit info
+     * @return {Unit} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - Unit not found - application/json
+     */
+    .put(validate('body', schemaUpdate), controllerHandler(controller.update));
 
 router
     .route('/:id(\\d+)')
@@ -40,17 +51,6 @@ router
      * @return {ApiError} 404 - Unit not found - application/json
      */
     .get(controllerHandler(controller.getOne))
-    /**
-     * PUT /api/units/{id}
-     * @summary Update one unit
-     * @tags Unit
-     * @param {number} id.path.required - unit identifier
-     * @param {InputUnit} request.body.required - unit info
-     * @return {Unit} 200 - success response - application/json
-     * @return {ApiError} 400 - Bad request response - application/json
-     * @return {ApiError} 404 - Unit not found - application/json
-     */
-    .put(validate('body', schemaUpdate), controllerHandler(controller.update))
     /**
      * DELETE /api/units/{id}
      * @summary Delete one unit

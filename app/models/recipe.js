@@ -35,7 +35,8 @@ module.exports = {
      * Reciped searched or undefined if no recipe found using the provided id
      */
     async findByPk(recipeId) {
-        const result = await client.query('SELECT * FROM detailed_recipe WHERE recipe.id = $1', [recipeId]);
+
+        const result = await client.query('SELECT * FROM detailed_recipe WHERE id = $1', [recipeId]);
 
         if (result.rowCount === 0) {
             return undefined;
@@ -83,7 +84,7 @@ module.exports = {
      * @returns {Recipe} - The modified recipe
      */
 
-    async update({ id, recipe }) {
+    async update(id, recipe) {
         const [setStatement, values] = updateQueryGenerator(recipe);
         const result = await client.query(`UPDATE recipe ${setStatement} WHERE id = $1`, [id, ...values]);
 

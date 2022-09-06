@@ -69,7 +69,7 @@ module.exports = {
 
     async update({ id, unit }) {
         const [setStatement, values] = updateQueryGenerator(unit);
-        const result = await client.query(`UPDATE unit ${setStatement} WHERE id = $1`, [id, ...values]);
+        const result = await client.query(`UPDATE unit ${setStatement} WHERE id = $1 RETURNING *`, [id, ...values]);
 
         if (result.rowCount === 0) {
             throw new ApiError(400, 'This recipe does not exist');

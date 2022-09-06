@@ -26,7 +26,18 @@ router
      * @return {Ingredient} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .post(validate('body', schemaCreate), controllerHandler(controller.create));
+    .post(validate('body', schemaCreate), controllerHandler(controller.create))
+    /**
+     * PUT /api/ingredients/{id}
+     * @summary Update one ingredient
+     * @tags Ingredient
+     * @param {number} id.path.required - ingredient identifier
+     * @param {InputIngredient} request.body.required - ingredient info
+     * @return {Ingredient} 200 - success response - application/json
+     * @return {ApiError} 400 - Bad request response - application/json
+     * @return {ApiError} 404 - Ingredient not found - application/json
+     */
+    .put(validate('body', schemaUpdate), controllerHandler(controller.update));
 
 router
     .route('/:id(\\d+)')
@@ -40,17 +51,7 @@ router
      * @return {ApiError} 404 - Ingredient not found - application/json
      */
     .get(controllerHandler(controller.getOne))
-    /**
-     * PUT /api/ingredients/{id}
-     * @summary Update one ingredient
-     * @tags Ingredient
-     * @param {number} id.path.required - ingredient identifier
-     * @param {InputIngredient} request.body.required - ingredient info
-     * @return {Ingredient} 200 - success response - application/json
-     * @return {ApiError} 400 - Bad request response - application/json
-     * @return {ApiError} 404 - Ingredient not found - application/json
-     */
-    .put(validate('body', schemaUpdate), controllerHandler(controller.update))
+
     /**
      * DELETE /api/ingredients/{id}
      * @summary Delete one ingredient

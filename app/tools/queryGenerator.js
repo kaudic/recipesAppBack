@@ -48,7 +48,7 @@ const updateQueryGenerator = (object, options = { countStarter: 2 }) => {
     const values = [];
 
     for (const key in object) {
-        setStatement += key + '=' + '$' + i + ',';
+        setStatement += replaceCamelCase(key) + '=' + '$' + i + ',';
         i++;
         values.push(object[key]);
     }

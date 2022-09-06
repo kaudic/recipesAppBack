@@ -4,7 +4,7 @@ const router = express.Router();
 const { errorHandler } = require('../helpers/errorHandler');
 
 // Imports of the main router
-const apiRouter = require('./api/recipe');
+const apiRouter = require('./api');
 
 // Call the different routers
 router.use('/api', apiRouter);
