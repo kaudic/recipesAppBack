@@ -14,5 +14,10 @@ module.exports = Joi.object({
         id: Joi.number().integer().required(),
         unitId: Joi.number().integer().required(),
         qty: Joi.number().required(),
+        // only to facilitate the updateSchema
+        name: Joi.string(),
+        unitShortName: Joi.string(),
+        unitName: Joi.string(),
+        shortName: Joi.string(),
     })).required()
 }).required();

@@ -41,7 +41,6 @@ module.exports = {
      * @returns {string} Route API JSON response
      */
     async create(req, res) {
-        console.log(`I'm in recipe post controller create.`);
         const { ingredients } = req.body;
         delete req.body.ingredients;
 
@@ -76,23 +75,19 @@ module.exports = {
      * @returns {string} Route API JSON response
      */
     async update(req, res) {
-        console.log(`I'm in recipe PUT controller update.`);
         const { id: recipeId, recipe } = req.body;
         const { ingredients } = recipe;
         delete recipe.ingredients;
 
         // update recipe from main table recipe
-        console.log('first query');
         await recipeDataMapper.update(recipeId, recipe);
 
         // update the links between recipes and ingredients in a jump table
-        console.log('second query');
         const recipeIngredientLinks = await recipeIngredientDataMapper.findByPk(recipeId);
         const queries = [];
 
         // first: get all current links in the table and then iterate through current provided links to create or update
         ingredients.forEach(({ id: ingredientId, qty, unitId }) => {
-            console.log({ qty, unitId });
             const isIngredient = (recipeIngredientLinks.map((x) => x.ingredient_id)).includes(ingredientId);
             if (isIngredient) {
                 queries.push(recipeIngredientDataMapper.update(recipeId, ingredientId, { qty, unitId }))
@@ -114,7 +109,6 @@ module.exports = {
         })
 
         // execute all the queries (create, update and delete)
-        console.log('will be executing the Promise.all');
         Promise.all([queries]);
 
         // return complete updated Recipe

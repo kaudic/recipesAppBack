@@ -39,7 +39,6 @@ module.exports = {
 
     async update(recipeId, ingredientId, recipeIngredientUnitAndQty) {
         const [setStatement, values] = updateQueryGenerator(recipeIngredientUnitAndQty, { countStarter: 3 });
-        console.log(setStatement);
         const result = await client.query(`UPDATE recipe_ingredient ${setStatement} WHERE recipe_id = $1 AND ingredient_id=$2`, [recipeId, ingredientId, ...values]);
 
         if (result.rowCount === 0) {
