@@ -1,5 +1,5 @@
 const express = require('express');
-
+const uploadImage = require('../../middlewares/uploadImages');
 const validate = require('../../validation/validator');
 const schemaCreate = require('../../validation/schemas/recipeCreateSchema');
 const schemaUpdate = require('../../validation/schemas/recipeUpdateSchema');
@@ -76,5 +76,15 @@ router
 router
     .route('/search')
     .post(sanitizeBody(), controllerHandler(controller.search));
+
+router
+    .route('/uploadImage')
+    /**
+     * PUT /api/recipes/uploadImage
+     * @summary Upload the enclosed image file and modify the imgName column in recipe Table
+     * @tags Recipe
+     * @return {} 204 - empty success response - application/json
+     */
+    .put(uploadImage(), controllerHandler(controller.modifyImgName));
 
 module.exports = router;

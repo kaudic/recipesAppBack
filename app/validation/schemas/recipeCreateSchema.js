@@ -4,7 +4,7 @@ const timeInterval = '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$';
 module.exports = Joi.object({
     title: Joi.string().required(),
     reference: Joi.string().required(),
-    imgName: Joi.string().required(),
+    imgName: Joi.string(),
     text: Joi.string(),
     mealQty: Joi.number().required(),
     cookingTime: Joi.string().pattern(new RegExp(timeInterval)).required(),

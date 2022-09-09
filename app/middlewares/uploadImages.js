@@ -4,20 +4,19 @@ const fs = require('fs');
 
 // function to return the path to the images folder in the audicServer
 const returnImagesFolderPath = () => {
-    const pathToImagesFolder = path.normalize(`${__dirname}/../../public/assets/images/temp`);
+    const pathToImagesFolder = path.normalize(`${__dirname}/../../public/images`);
     console.log('Files will be downloaded to this path: ' + pathToImagesFolder);
     return pathToImagesFolder;
 }
 
-//usine à middleware. Dans le return de la fonction je retourne le middleware fournit par multer.
-const upLoadImages = (files) => {
-
-    console.log('multer got files : ' + files);
+// middleware's factory -> return a middleware function
+const upLoadImage = (file) => {
 
     const storage = multer.diskStorage({
         destination: returnImagesFolderPath(),
 
         filename: (req, file, callback) => {
+            console.log('originalname: ' + file.originalname);
             const randomNumber = Math.floor(Math.random() * 1000);
             const newFileName = file.originalname.split('.')[0] + randomNumber + '.' + file.originalname.split('.')[1];
             callback(null, newFileName);
@@ -41,8 +40,8 @@ const upLoadImages = (files) => {
         }
     };
 
-    return multer({ storage: storage, fileFilter: fileFilter }).array('uploadInput');
+    return multer({ storage: storage, fileFilter: fileFilter }).single('imgFile');
 
 }
 
-module.exports = upLoadImages;
+module.exports = upLoadImage;

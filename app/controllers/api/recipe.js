@@ -141,4 +141,8 @@ module.exports = {
         const searchedRecipes = await recipeDataMapper.search(req.body.searchString);
         return res.json(searchedRecipes);
     },
+
+    async modifyImgName(req, res) {
+        console.log(`I'm in the controller. I got ${req.imgName} as a fileName to put in DB`);
+    }
 };
