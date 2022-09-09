@@ -143,6 +143,11 @@ module.exports = {
     },
 
     async modifyImgName(req, res) {
-        console.log(`I'm in the controller. I got ${req.imgName} as a fileName to put in DB`);
+        console.log(`I'm in the controller`);
+        const { imgName, recipeId } = req.body;
+        const result = await recipeDataMapper.updateImgName(recipeId, imgName);
+        res.status(200).json({
+            result
+        })
     }
 };

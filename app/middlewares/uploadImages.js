@@ -5,7 +5,6 @@ const fs = require('fs');
 // function to return the path to the images folder in the audicServer
 const returnImagesFolderPath = () => {
     const pathToImagesFolder = path.normalize(`${__dirname}/../../public/images`);
-    console.log('Files will be downloaded to this path: ' + pathToImagesFolder);
     return pathToImagesFolder;
 }
 
@@ -16,9 +15,8 @@ const upLoadImage = (file) => {
         destination: returnImagesFolderPath(),
 
         filename: (req, file, callback) => {
-            console.log('originalname: ' + file.originalname);
-            const randomNumber = Math.floor(Math.random() * 1000);
-            const newFileName = file.originalname.split('.')[0] + randomNumber + '.' + file.originalname.split('.')[1];
+            const newFileName = file.originalname.split('.')[0].toLowerCase() + '.' + file.originalname.split('.')[1].toLowerCase();
+            req.body.imgName = newFileName; // giving the controller the file name
             callback(null, newFileName);
         }
 
@@ -35,7 +33,6 @@ const upLoadImage = (file) => {
             callback(null, false);
         }
         else {
-            console.log('Autorisation de Multer pour le fichier: ' + file.originalname);
             callback(null, true);
         }
     };

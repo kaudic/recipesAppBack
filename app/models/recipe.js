@@ -130,4 +130,23 @@ module.exports = {
 
         return result.rows;
     },
+
+    /**
+ * Modify in Database the name of the image for the recipe (PUT)
+ * @param {number} id - id of Recipe to modify
+ * @param {InputRecipe} recipe - the data to insert in place of previous data
+ * @returns {Recipe} - The modified recipe
+ */
+
+    async updateImgName(id, imgName) {
+        const result = await client.query(`UPDATE recipe SET img_name=$2 WHERE id = $1 RETURNING *`, [id, imgName]);
+
+        if (result.rowCount === 0) {
+            throw new ApiError(400, 'This recipe does not exist');
+        }
+
+        console.log('datamapper: ' + result.rows[0]);
+
+        return result.rows[0];
+    },
 };
