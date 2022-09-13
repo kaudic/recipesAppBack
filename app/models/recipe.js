@@ -117,10 +117,10 @@ module.exports = {
         const result = await client.query(
             `
         SELECT * FROM detailed_recipe WHERE
-        LOWER(ingredients::text) like LOWER('%$1%') 
-        or LOWER(reference) like LOWER('%$1%')
-        or LOWER(title) like LOWER('%$1%')
-        or LOWER(text) like LOWER('%$1%')
+        LOWER(ingredients::text) like LOWER($1) 
+        or LOWER(reference) like LOWER($1)
+        or LOWER(title) like LOWER($1)
+        or LOWER(text) like LOWER($1)
         `, [string]);
 
 

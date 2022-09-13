@@ -138,12 +138,13 @@ module.exports = {
      * @returns {string} Route API JSON response
      */
     async search(req, res) {
-        const searchedRecipes = await recipeDataMapper.search(req.body.searchString);
+        const { searchString } = req.body;
+        const stringShapedForQuery = '%' + searchString + '%';
+        const searchedRecipes = await recipeDataMapper.findAllByString(stringShapedForQuery);
         return res.json(searchedRecipes);
     },
 
     async modifyImgName(req, res) {
-        console.log(`I'm in the controller`);
         const { imgName, recipeId } = req.body;
         const result = await recipeDataMapper.updateImgName(recipeId, imgName);
         res.status(200).json({

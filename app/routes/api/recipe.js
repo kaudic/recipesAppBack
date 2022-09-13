@@ -3,7 +3,7 @@ const uploadImage = require('../../middlewares/uploadImages');
 const validate = require('../../validation/validator');
 const schemaCreate = require('../../validation/schemas/recipeCreateSchema');
 const schemaUpdate = require('../../validation/schemas/recipeUpdateSchema');
-const sanitizeBody = require('../../validation/sanitizeHtml');
+// const sanitizeBody = require('../../validation/sanitizeHtml'); => caused me problem making a formData ?!
 
 const { recipeController: controller } = require('../../controllers/api');
 const controllerHandler = require('../../helpers/controllerHandler');
@@ -75,7 +75,7 @@ router
  */
 router
     .route('/search')
-    .post(sanitizeBody(), controllerHandler(controller.search));
+    .post(controllerHandler(controller.search));
 
 router
     .route('/uploadImage')

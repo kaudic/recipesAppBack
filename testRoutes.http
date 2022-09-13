@@ -135,7 +135,7 @@ POST {{ endpoint }}/ingredients
 content-type: application/json
 
 {
-  "name": "Pâtes de riz",
+  "name": "Herbe de provence",
   "mainUnitId": 5
 }
 
@@ -198,3 +198,20 @@ content-type: application/json
 
 ### Delete an ingredient with success
 DELETE {{ endpoint }}/units/7
+
+### Search for recipes with a searchString
+POST {{ endpoint }}/recipes/search
+content-type: application/json
+
+{
+  "searchString": "poulet"
+}
+
+
+### Create an ingredient with success
+POST {{ endpoint }}/recipes/search
+content-type: application/json
+
+{
+  "searchString": "Poulet"
+}
