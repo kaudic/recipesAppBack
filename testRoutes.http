@@ -135,7 +135,7 @@ POST {{ endpoint }}/ingredients
 content-type: application/json
 
 {
-  "name": "Herbe de provence",
+  "name": "Sel",
   "mainUnitId": 5
 }
 
@@ -153,7 +153,7 @@ content-type: application/json
 }
 
 ### Delete an ingredient with success
-DELETE {{ endpoint }}/ingredients/12
+DELETE {{ endpoint }}/ingredients/17
 
 ### Units PART ----------------------------------------------------------
 
@@ -215,3 +215,19 @@ content-type: application/json
 {
   "searchString": "Poulet"
 }
+
+### Get all recipe from basket
+
+GET {{ endpoint }}/basket
+
+### Delete all recipe from basket
+
+DELETE {{ endpoint }}/basket
+
+### Add one recipe to basket
+
+GET {{ endpoint }}/basket/41
+
+### Delete one recipe from basket
+
+DELETE {{ endpoint }}/basket/41

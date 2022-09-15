@@ -15,7 +15,7 @@ module.exports = {
      * @returns {Ingredient[]} - Every ingredients from Database
      */
     async findAll() {
-        const result = await client.query('SELECT * FROM ingredient');
+        const result = await client.query('SELECT * FROM ingredient ORDER BY name ASC');
         return result.rows;
     },
 

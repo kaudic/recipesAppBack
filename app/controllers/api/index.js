@@ -1,6 +1,7 @@
 const recipeController = require('./recipe');
 const ingredientController = require('./ingredient');
 const unitController = require('./unit');
+const basketController = require('./basket');
 
 const apiController = {
     /**
@@ -17,4 +18,4 @@ const apiController = {
     },
 };
 
-module.exports = { apiController, recipeController, ingredientController, unitController };
+module.exports = { apiController, recipeController, ingredientController, unitController, basketController };
