@@ -207,7 +207,6 @@ content-type: application/json
   "searchString": "poulet"
 }
 
-
 ### Create an ingredient with success
 POST {{ endpoint }}/recipes/search
 content-type: application/json
@@ -217,17 +216,13 @@ content-type: application/json
 }
 
 ### Get all recipe from basket
-
 GET {{ endpoint }}/basket
 
 ### Delete all recipe from basket
-
 DELETE {{ endpoint }}/basket
 
 ### Add one recipe to basket
-
 GET {{ endpoint }}/basket/41
 
 ### Delete one recipe from basket
-
 DELETE {{ endpoint }}/basket/41

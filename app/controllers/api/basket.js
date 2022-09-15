@@ -20,8 +20,8 @@ module.exports = {
      * delete all recipes in the basket.
      */
     async deleteAll(_, res) {
-        const recipes = await basketDataMapper.deleteAll();
-        return res.json(recipes);
+        await basketDataMapper.deleteAll();
+        return res.status(204).json();
     },
     /**
      * Add one recipe in the basket.
@@ -36,8 +36,8 @@ module.exports = {
      */
     async deleteOneRecipeByPk(req, res) {
         const { id: recipeId } = req.params;
-        const recipes = await basketDataMapper.deleteOneByPk(recipeId);
-        return res.json(recipes);
+        await basketDataMapper.deleteOneByPk(recipeId);
+        return res.status(204).json();
     },
 
 };
