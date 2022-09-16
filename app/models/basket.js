@@ -64,6 +64,26 @@ module.exports = {
         return result.rows;
     },
 
+    /**
+     * Get list of ingredients corresponding to the recipes in basket
+     */
+    async getIngredientsList() {
+        const list = await client.query(
+            `
+                SELECT ingredient.*, sum(recipe_ingredient.qty),unit.name  FROM recipe
+                LEFT JOIN recipe_ingredient 
+                ON recipe.id = recipe_ingredient.recipe_id
+                LEFT JOIN ingredient 
+                ON recipe_ingredient.ingredient_id = ingredient.id
+                LEFT JOIN unit
+                ON recipe_ingredient.unit_id = unit.id
+                GROUP BY recipe.basket, ingredient.id, recipe_ingredient.unit_id, unit.name
+                HAVING recipe.basket=true
+            `
+        )
+        return list.rows;
+    }
+
 
 
 

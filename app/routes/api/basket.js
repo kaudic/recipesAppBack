@@ -29,4 +29,12 @@ router
      */
     .delete(controllerHandler(controller.deleteOneRecipeByPk));
 
+/**
+ * GET all ingredients necessary for the recipes in the basket
+ */
+router
+    .route('/ingredients')
+    .get(controllerHandler(controller.getIngredientsList))
+
+
 module.exports = router;

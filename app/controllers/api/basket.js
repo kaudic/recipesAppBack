@@ -39,5 +39,12 @@ module.exports = {
         await basketDataMapper.deleteOneByPk(recipeId);
         return res.status(204).json();
     },
+    /**
+     * Get the list of ingredients corresponding to the recipes in the basket
+     */
+    async getIngredientsList(req, res) {
+        const ingredientsList = await basketDataMapper.getIngredientsList();
+        return res.json(ingredientsList);
+    }
 
 };
