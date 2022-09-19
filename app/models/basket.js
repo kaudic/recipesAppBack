@@ -70,7 +70,7 @@ module.exports = {
     async getIngredientsList() {
         const list = await client.query(
             `
-                SELECT ingredient.*, sum(recipe_ingredient.qty),unit.name  FROM recipe
+                SELECT ingredient.*, sum(recipe_ingredient.qty),unit.name as unit_name FROM recipe
                 LEFT JOIN recipe_ingredient 
                 ON recipe.id = recipe_ingredient.recipe_id
                 LEFT JOIN ingredient 
@@ -83,8 +83,4 @@ module.exports = {
         )
         return list.rows;
     }
-
-
-
-
 };

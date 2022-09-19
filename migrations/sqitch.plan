@@ -5,3 +5,4 @@ initdb 2022-09-04T13:30:35Z Killian AUDIC <killi@LAPTOP-5GJ086M6> # crÃ©ation 
 detailed_recipe 2022-09-05T09:44:44Z Killian AUDIC <killi@LAPTOP-5GJ086M6> # detailed recipes with ingredients and units
 alter_img_name 2022-09-09T08:28:14Z Killian AUDIC <killi@LAPTOP-5GJ086M6> # alter column recipe img_name
 basket_field 2022-09-15T13:38:49Z Killian AUDIC <killi@LAPTOP-5GJ086M6> # ajout du champs basket
+refresh_detailed_recipe_view 2022-09-19T10:41:36Z Killian AUDIC <killi@LAPTOP-5GJ086M6> # adding basket columns to the view

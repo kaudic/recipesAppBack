@@ -1,7 +1,7 @@
 const recipeDataMapper = require('../../models/recipe');
 const recipeIngredientDataMapper = require('../../models/recipeIngredient');
 const { ApiError } = require('../../helpers/errorHandler');
-const shuffleArray = require('../../tools/shuffleArray');
+// const shuffleArray = require('../../tools/shuffleArray');
 
 module.exports = {
     /**
@@ -13,7 +13,7 @@ module.exports = {
      */
     async getAll(_, res) {
         const recipes = await recipeDataMapper.findAll();
-        return res.json(shuffleArray(recipes));
+        return res.json((recipes));
     },
 
     /**
