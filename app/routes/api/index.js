@@ -3,6 +3,7 @@ const express = require('express');
 const recipeRouter = require('./recipe');
 const ingredientRouter = require('./ingredient');
 const unitRouter = require('./unit');
+const typeRouter = require('./type');
 const basketRouter = require('./basket');
 
 const { apiController } = require('../../controllers/api');
@@ -15,6 +16,7 @@ router.all('/', apiController.home); // will return a message saying that route 
 router.use('/recipes', recipeRouter);
 router.use('/ingredients', ingredientRouter);
 router.use('/units', unitRouter);
+router.use('/types', typeRouter);
 router.use('/basket', basketRouter);
 
 router.use(() => {

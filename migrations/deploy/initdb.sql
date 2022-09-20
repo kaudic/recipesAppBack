@@ -7,7 +7,7 @@ CREATE TABLE "type" (
     "name" TEXT UNIQUE NOT NULL --Froid,Chaud,Dessert
 );
 
-INSERT INTO "type" ("name") VALUES ('FROID'),('CHAUD'),('DESSERT');
+INSERT INTO "type" ("name") VALUES ('POISSON'),('VIANDE'),('VEGAN');
 
 CREATE TABLE "recipe" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

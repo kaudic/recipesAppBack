@@ -215,6 +215,8 @@ content-type: application/json
   "searchString": "Poulet"
 }
 
+### Basket PART ----------------------------------------------------------
+
 ### Get all recipe from basket
 GET {{ endpoint }}/basket
 
@@ -226,3 +228,37 @@ GET {{ endpoint }}/basket/41
 
 ### Delete one recipe from basket
 DELETE {{ endpoint }}/basket/41
+
+### Types PART ----------------------------------------------------------
+
+### List of types
+GET {{ endpoint }}/types
+
+### Get a type with its id
+GET {{ endpoint }}/types/1
+
+### Type Not Found: Get a type with WRONG id 
+GET {{ endpoint }}/types/2000
+
+### Create a type with success
+POST {{ endpoint }}/types
+content-type: application/json
+
+{
+  "name": "Chaud"
+}
+
+### Update a type with success
+PUT {{ endpoint }}/types
+content-type: application/json
+
+{
+  "id": 3,
+  "type": {
+    "name": "VEGAN"
+  }
+  
+}
+
+### Delete a type with its id
+DELETE {{ endpoint }}/types/4
