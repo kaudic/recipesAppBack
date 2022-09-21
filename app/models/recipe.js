@@ -145,8 +145,6 @@ module.exports = {
             throw new ApiError(400, 'This recipe does not exist');
         }
 
-        console.log('datamapper: ' + result.rows[0]);
-
         return result.rows[0];
     },
 };
