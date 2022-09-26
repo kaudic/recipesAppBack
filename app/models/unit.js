@@ -15,7 +15,7 @@ module.exports = {
      * @returns {Unit[]} - Every units from Database
      */
     async findAll() {
-        const result = await client.query('SELECT * FROM unit');
+        const result = await client.query('SELECT * FROM unit ORDER BY name ASC');
         return result.rows;
     },
 
