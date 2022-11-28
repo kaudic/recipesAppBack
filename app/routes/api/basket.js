@@ -7,6 +7,11 @@ const controllerHandler = require('../../helpers/controllerHandler');
 
 const router = express.Router();
 
+router.use('/', (req, res, next) => {
+    console.log('I am in the basket router');
+    next();
+});
+
 router
     .route('/')
     /**
