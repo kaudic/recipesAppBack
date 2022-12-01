@@ -17,11 +17,10 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Data for Name: unit; Type: TABLE DATA; Schema: public; Owner: spedata
+-- Data for Name: unit; Type: TABLE DATA; Schema: public; Owner: recipesapp
 --
 
 COPY public.unit (id, short_name, name) FROM stdin;
-<<<<<<< HEAD
 1	L	Litre
 2	CS	Cuillère à soupe
 3	CC	Cuillère à café
@@ -30,290 +29,148 @@ COPY public.unit (id, short_name, name) FROM stdin;
 6	Gr	Grammes
 7	UN	Unité
 8	PI	Pincée
-=======
-3	CS	Cuillère à soupe
-4	CC	Cuillère à café
-5	Kg	Kilos
-1	UN	Unité
-6	CL	Centilitre
-2	L	Litre
-8	GR	Gramme
-9	PG	Poignée
-10	BR	Brin
-11	ZE	----
-13	TR	Tranche
-14	CB	Cube
-12	RL	Rouleaux
->>>>>>> 671380e1cb2e1a76699a57853373153220151a14
 \.
 
 
 --
--- Data for Name: ingredient; Type: TABLE DATA; Schema: public; Owner: spedata
+-- Data for Name: ingredient; Type: TABLE DATA; Schema: public; Owner: recipesapp
 --
 
 COPY public.ingredient (id, name, main_unit_id) FROM stdin;
-1	Crevette	1
-<<<<<<< HEAD
-2	Riz	5
-3	Chorizo	1
-4	Farine	3
-5	Oeuf	1
-6	Lait	2
-7	Huile	3
-8	Tomate	1
-9	Poireau	1
-10	Poire	1
-11	Poulet	8
-12	Boeuf	8
-13	Cacahuète	8
-14	Pesto	4
-15	Pâtes	8
-16	Jambon blanc	1
-17	Tartine de pain	1
-18	Gruyère rapé	8
-19	Beurre	2
-20	Choux fleur	1
-21	Ananas	3
-22	Epinard	8
-23	Persil	14
-=======
-2	Tomate	1
-3	Riz	5
-5	Poireau	1
-7	Huile	3
-8	Lait	6
-9	Oeuf	1
-4	Chorizo	5
-12	Graine de Fenouil	3
-13	Gros sel	5
-14	Bar	5
-15	Blanc d'oeuf	1
-16	Champignon de Paris	8
-17	Beurre	8
-6	Farine	8
-18	Gousse d'ail	1
-19	Vin Blanc	6
-20	Citron	1
-23	Eau	2
-24	Cèpes séchés	9
-25	Morilles séchées	9
-26	Oignon	1
-27	Ail en poudre	4
-28	Huile d'Olive	3
-29	Curry	4
-30	Filets de poulet	1
-31	Sauce Soja	3
-32	Ciboulette	10
-33	Crème fraiche épaisse	6
-34	Pomme de terre	1
-35	Basilic	11
-22	Sel	11
-21	Poivre	11
-37	Fromage râpé	11
-38	Pâte feuilletée	12
-39	Fromage à raclette	13
-40	Macaroni	8
-41	Bouillon de légumes	14
-42	Jambon fumé	13
-43	Crème liquide	2
-44	Gruyère râpé	8
-45	Persil	11
-46	Romarin	11
-47	Piment d'Espelette	1
-48	Parmesan râpé	11
-49	Linguine	8
-50	Crème fraiche	6
-51	Saumon fumé	13
-52	Mascarpone	8
-53	Gruyère	8
-54	Jaune d'oeuf	1
->>>>>>> 671380e1cb2e1a76699a57853373153220151a14
+56	Crevette	1
+57	Riz	5
+58	Chorizo	1
+59	Farine	3
+60	Oeuf	1
+61	Lait	2
+62	Huile	3
+63	Tomate	1
+64	Poireau	1
+65	Poire	1
+66	Poulet	8
+67	Boeuf	8
+68	Cacahuète	8
+69	Pesto	4
+70	Pâtes	8
+71	Jambon blanc	1
+72	Tartine de pain	1
+73	Gruyère rapé	8
+74	Beurre	2
+75	Choux fleur	1
+76	Ananas	3
+77	Epinard	8
+78	Persil	7
 \.
 
 
 --
--- Data for Name: type; Type: TABLE DATA; Schema: public; Owner: spedata
+-- Data for Name: type; Type: TABLE DATA; Schema: public; Owner: recipesapp
 --
 
 COPY public.type (id, name) FROM stdin;
-<<<<<<< HEAD
 1	VIANDE
 2	POISSON
-=======
-1	POISSON
-2	VIANDE
->>>>>>> 671380e1cb2e1a76699a57853373153220151a14
 3	VEGAN
 \.
 
 
 --
--- Data for Name: recipe; Type: TABLE DATA; Schema: public; Owner: spedata
+-- Data for Name: recipe; Type: TABLE DATA; Schema: public; Owner: recipesapp
 --
 
 COPY public.recipe (id, title, reference, img_name, text, meal_qty, cooking_time, preparation_time, type_id, basket) FROM stdin;
-<<<<<<< HEAD
-1	recette longue	très longue	chilli.jpg	long!\nfasitideux!	1	01:00:00	01:00:00	1	t
 2	gndggh,f	hj;hj;jk:jk	lentilles.jpg	fshsrtdtjty	6	00:06:00	00:06:00	1	f
 3	Galettes de poireaux	Marmitton:  https://www.marmiton.org/recettes/recette_galettes-de-poireaux_29838.aspx	poireaux.jpg	Laver et hacher les poireaux finement.\nFaire une pâte à crêpe avec les oeufs, 1 cuillère soupe d''huile, sel, poivre, la farine, le lait et un peu de muscade.\n\nAjouter les poireaux et mélanger, rajouter du lait si nécessaire.\nFaire cuire des petites crêpes de 5 mm dépaisseur dans une poêle chaude huilée, environ 5 min par face à feu doux.\n\nServir avec une vinaigrette, une sauce au fromage blanc ou de la sauce soja.	4	00:10:00	00:10:00	2	f
 4	Cuisses de poulet au barbecue	Livre Recettes faciles P5 ...	poulet_barbecue.jpg	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat ante est, et finibus ipsum porttitor sed. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed neque arcu, lobortis id tempus sit amet, consectetur vel mi. Ut posuere feugiat leo, ac mollis nisi lobortis vel. Suspendisse potenti. Fusce vel mauris nec turpis placerat sodales quis ac ipsum. Sed fringilla nisi ultricies porttitor ultricies. Aliquam ac posuere nisi, non iaculis orci.Pellentesque aliquam gravida facilisis. Fusce accumsan suscipit mattis. Aenean dui justo, mollis vitae eros mollis, hendrerit blandit ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras non velit blandit, volutpat massa eget, rutrum lorem. Fusce auctor mauris non sem gravida gravida.Praesent hendrerit ultricies magna sed elementum. Duis gravida nec nibh eget egestas. Nullam id nunc facilisis, pharetra metus quis, lacinia ante. Donec vitae condimentum erat. Morbi sit amet magna magna. Curabitur eu rutrum felis. Suspendisse pharetra nibh risus, eu lobortis lectus luctus commodo.Aenean pharetra aliquam risus non rhoncus. Curabitur vel mi viverra, euismod ex ac, porttitor tellus. Quisque a augue non libero egestas volutpat. Nam eget consectetur massa. Aenean sollicitudin maximus euismod. Ut varius elementum efficitur. Pellentesque dignissim quis odio interdum tempus. Nunc tincidunt dui ut iaculis iaculis. Integer sagittis odio a justo dignissim, non efficitur risus vestibulum. Etiam urabitur faucibus porttitor nulla sed eleifend. Pellentesque et sagittis purus. Vivamus mauris mauris, interdum eget ex eu, tempus scelerisque justo. Praesent eget magna quis mi imperdiet consectetur. Duis in pretium nisi. Pellentesque habitant morbi .	6	00:25:00	00:10:00	2	f
-5	nouveau test	kjdgfkajerg	error404.jpg	zaegzerhrtrzth	5	00:06:00	01:00:00	1	t
 6	Croc Monsieur	Maison	chilli.jpg	Croc monsieur très bon	3	00:15:00	00:15:00	1	f
 7	poulet_braisé	La mer Jesta3	poulet_braisé.jpg	toto va à la mer	4	00:30:00	00:20:00	2	f
 8	Lentilles et viande hachée!	La mer Jesta ...	lentilles.jpg	toto va à la mer	4	00:30:00	00:20:00	2	f
 9	nouvelle recette poisson	test poisson	noimage.jpg	-(ue(-u	4	00:12:00	01:15:00	1	f
-10	ergezg	rjetyjtyj	paella.jpg	fxgndghngh,hj,	4	00:05:00	00:05:00	1	f
-11	Shrimp and Chorizo Paella	Livre Cyril Lignac ...	paella.jpg	Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.\nHeat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a\nAdd rice and stir very gently to distribute. Top with artichokes and peppers. (Discard any mussels that do not open.)test	2	00:25:00	00:15:00	2	f
-12	Ma première Recette de Pomme de terre	Mon imagination	pate_carbo.jpg	Ceci est juste un testuuuu	4	00:15:00	00:10:00	1	t
 13	Carpaccio de boeuf	Pour tester upload image à la création	carpaccio.jpg	Un très bon carpaccio de boeuf	6	00:15:00	00:15:00	3	f
 14	boeuf bourguignon	La mer Jesta5	boeuf_bourguignon.jpg	titi va à la mer	4	00:30:00	00:20:00	2	f
+5	nouveau test	kjdgfkajerg	error404.jpg	zaegzerhrtrzth	5	00:06:00	01:00:00	1	f
+11	Shrimp and Chorizo Paella	Livre Cyril Lignac ...	paella.jpg	Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.\nHeat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a\nAdd rice and stir very gently to distribute. Top with artichokes and peppers. (Discard any mussels that do not open.)test	2	00:25:00	00:15:00	2	f
+1	recette longue	très longue	chilli.jpg	long!\nfasitideux!	1	01:00:00	01:00:00	1	t
+10	ergezg	rjetyjtyj	paella.jpg	fxgndghngh,hj,	4	00:05:00	00:05:00	1	t
+12	Ma première Recette de Pomme de terre	Mon imagination	pate_carbo.jpg	Ceci est juste un testuuuu	4	00:15:00	00:10:00	1	t
 15	nouvelle recette2	un livre imaginaire	tourte_saumon2.jpg	vHeat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes. Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a Add rice and stir very gently to distribute. Top with artichokes and peppers. (Discard any mussels that do not open.)testHeat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes. Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a Add rice and stir very gently to distribute. Top with artichokes and peppers. (Discard any mussels that do not open.)testHeat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes. Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a Add rice and stir very gently to distribute. Top with artichokes and peppers. (Discard any mussels that do not open.)test	4	00:05:00	00:05:00	1	f
-16	Nouvelle recette test	toto et titi	lentilles.jpg	Faux carpacio	8	00:35:00	00:15:00	2	f
-17	test	démo	imagetest.jpg	zfergzerhrth	5	00:05:00	00:05:00	1	t
-18	nouvelle recette VEGAN	vegaaaaaaaaaaaan	noimage.jpg	iiii	1	00:10:00	00:10:00	3	t
 19	nouvelle recette	un livre imaginaire	imagetest.jpg	Recette pour tester les message de validation	4	00:05:00	00:05:00	1	f
 20	eytjtyjdrk	jdtyk,yryu	poulet_barbecue.jpg	rdghrthgh,fh,ghj	7	00:06:00	00:06:00	1	f
-=======
-5	Bar enveloppé de croûte de sel	https://www.marmiton.org/recettes/recette_bar-enveloppe-de-croute-de-sel_26867.aspx	bar_croute_sel.jpg	ÉTAPE 1\nPréchauffez le four à 210°C (thermostat 7).\n\nÉTAPE 2\nEventrez le poisson de la queue à la tête avec un couteau bien aiguisé et videz-le. Ne l'écaillez pas mais lavez-le et épongez-le très soigneusement. Dans la cavité ventrale, disposez quelques graines de fenouil ou de cumin.\n\nÉTAPE 3\nDéposez une couche de gros sel sur un grand plat à four - ou à défaut sur la lèchefrite - puis posez le poisson dessus bien à plat.\n\nÉTAPE 4\nMélangez le reste du sel avec le blanc d'oeuf et quelques graines de fenouil ou de cumin. Recouvrez-en le poisson en tassant bien pour l'enfermer hermétiquement.\n\nÉTAPE 5\nEnfournez pour 30-35 minutes de cuisson. Laissez reposer 10 minutes à la sortie du four avant de briser la gangue de sel à l'aide du rouleau à pâtisserie ou d'un petit marteau. La peau se retire très facilement lorsque le poisson est tout chaud.\n\nÉTAPE 6\nServez aussitôt.	4	00:30:00	00:20:00	1	f
-7	Filet de poulet au curry	https://www.marmiton.org/recettes/recette_filet-de-poulet-au-curry_80990.aspx	poulet_curry.jpg	ÉTAPE 1\nCouper les filets de poulet en petits morceaux, les mettre dans un saladier avec la sauce soja, l'ail, l'huile d'olive, la ciboulette et le curry. Laissez reposer une heure.\n\nÉTAPE 2\nAprès, faire revenir l'oignon avec un peu d'huile d'olive, une fois légèrement caramélisé, mettre la viande.\n\nÉTAPE 3\nQuand la viande commence à cuire, mettre petit à petit la crème fraîche (épaisse ou liquide), ajouter du curry selon vos goûts sur la viande.\n\nÉTAPE 4\nMélanger bien le tout, saler et poivrer.\n\nÉTAPE 5\nBon appétit à vous.	4	00:15:00	00:10:00	2	t
-17	Chili Con Carne	Livre 7	chilli.jpg	Recette du chili con carne	4	00:30:00	01:00:00	2	f
-14	Tourte au saumon rapide	https://www.marmiton.org/recettes/recette_tourte-au-saumon-rapide_56983.aspx	tourte_saumon.jpg	ÉTAPE 1\nPréchauffer le four à 200°C (thermostat 6-7).\n\nÉTAPE 2\nEtaler la pâte feuilletée dans le moule à tarte.\n\nÉTAPE 3\nMettre les tranches de saumon puis le mascarpone, le gruyère et la crème fraîche.\n\nÉTAPE 4\nRecouvrir avec la deuxième pâte feuilletée, passer sur la pâte le jaune d'oeuf à l'aide d'un pinceau et faire cuire 30 minutes.	6	00:30:00	00:07:00	1	t
-15	Paëlla à la catalane	Livre 4	paella.jpg	Recette de Paëlla à décrire	4	00:45:00	00:30:00	2	f
-16	Poulet braisé au barbecue	Livre 6	poulet_braisã©.jpg	Recette du poulet au barbecue	6	01:15:00	00:15:00	2	f
-6	Croûte forestière aux morilles	https://www.marmiton.org/recettes/recette_croute-forestiere-aux-morilles_52477.aspx	croute_forestiere.jpg	ÉTAPE 1\nSi vous utilisez des champignons sechés, les faire tremper séparément la veille dans une bonne quantité d'eau tiède afin de l'utiliser pour lier la sauce.\n\nÉTAPE 2\nAprès trempage, les sortir de l'eau et les rincer, surtout les morilles qui contiennent du sable à l'intérieur.\n\nÉTAPE 3\nCuire les champignons de Paris dans de l'eau citronnée et légèrement salée puis réserver le jus de cuisson.\n\nÉTAPE 4\nFaire revenir tous les champignons dans 50 g de beurre puis ajouter l'échalote, l'ail et le vin blanc.\n\nÉTAPE 5\nLaisser mijoter pendant que vous préparez la sauce.\n\nÉTAPE 6\nFaire le roux : faire fondre le reste du beurre puis ajouter la farine en mélangeant, laisser blondir sans trop.\n\nÉTAPE 7\nLe laisser refroidir.\n\nÉTAPE 8\nIl est important d'utiliser le roux froid pour lier la sauce avec le jus chaud afin de ne pas faire de grumeaux.\n\nÉTAPE 9\nDans une casserole, commencer à lier la sauce en mélangeant progressivement un peu de roux avec un peu de jus des champignons (attention laisser bien décanter le jus des morilles afin que le sable reste au fond du récipient!).\n\nÉTAPE 10\nAllez-y progressivement afin que la sauce ne soit pas trop liquide puis ajouter la crème, plus ou moins en fonction de la consistance voulue.\n\nÉTAPE 11\nNe pas hésiter pas à la rallonger avec de la crème ou de l'eau si elle semble trop épaisse.\n\nÉTAPE 12\nSi au contraire la sauce est trop liquide, ajouter un peu de maïzena diluée dans un peu d'eau froide et laisser épaissir sur feu doux en remuant.\n\nÉTAPE 13\nEnfin, mélanger les champignons à la sauce et assaisonner.\n\nÉTAPE 14\nOn peut éventuellement rajouter du jus de citron.\n\nÉTAPE 15\nLaissez mijoter pendant 1 heure à feux doux en remuant de temps en temps.\n\nÉTAPE 16\nDégustez avec du pain grillé ou des croûtes feuilletées.\n\n	6	01:00:00	01:00:00	3	t
-13	Linguine à la toscane	https://www.marmiton.org/recettes/recette_linguine-a-la-toscane_21514.aspx	linguines.jpg	ÉTAPE 1\nDans une casserole, faire infuser 5 mn le piment - que vous aurez préalablement écrasé - dans de l'huile chaude (4 cuillerées à soupe). Ajouter l'ail. Puis les herbes hachées (ceci juste avant d'y jeter les linguines).\n\nÉTAPE 2\nParallèlement, faire cuire les linguines 'al dente'. Goûter l'eau lors de la cuisson pour vous assurer qu'elle est convenablement salée. Essorer les linguines (point trop), puis les jeter dans la casserole qui contient l'huile, le piment, l'ail et les herbes.\n\nÉTAPE 3\nMélanger délicatement. Servir avec du parmesan, un filet d'huile d'olive sur chaque assiette et un tour de moulin à poivre.\n\nÉTAPE 4\nE viva la Toscana!	4	00:10:00	00:10:00	3	t
-9	Gratin de macaronis au gruyère et au jambon fumé	https://www.marmiton.org/recettes/recette_gratin-de-macaronis-au-gruyere-et-au-jambon-fume-de-ma-grand-mere_91888.aspx	macaroni2.jpg	ÉTAPE 1\nFaites préchauffer votre four à 220°C.\n\nÉTAPE 2\nPorter l'eau des pâtes à ébullition avec 1/2 cube de bouillon de légumes. Quant l'eau bout, y ajouter les macaronis. Les faire cuire 6 minutes.\n\nÉTAPE 3\nPendant ce temps, placer les 2 tranches de jambon fumé dans un saladier et les couper en petits bouts à l'aide d'une fourchette et d'un couteau.\n\nÉTAPE 4\nY ajouter les 2/3 du gruyère (50g) et bien mélanger.\n\nÉTAPE 5\nQuand les pâtes sont cuites, les égoutter. Faire fondre le beurre dans la même casserole qui aura servi à la cuisson des pâtes, y replacer les pâtes et bien mélanger le tout. Une fois le beurre fondu, verser les pâtes dans le saladier et mélangez les au jambon et au fromage.\n\nÉTAPE 6\nRajouter la crème liquide, saler et poivrer fortement. Remélanger le tout et verser dans un petit plat à gratin préalablement beurré.\n\nÉTAPE 7\nRajouter le reste de gruyère sur cette préparation et enfourner 15 minumes. Attendez que le dessus soit doré pour sortir le gratin du four.\n\nÉTAPE 8\nC'est prêt à déguster et tout le monde en raffole!!!	2	00:21:00	00:05:00	2	t
-8	Tarte salée aux pommes de terre et aux oignons	https://www.marmiton.org/recettes/recette_tarte-salee-aux-pommes-de-terre-et-aux-oignons_51946.aspx	tarte_salee_pdt.jpg	ÉTAPE 1\nPréchauffer le four à 190°C (thermostat 6-7).\n\nÉTAPE 2\nFaire suer et revenir les oignons à la poêle.\n\nÉTAPE 3\nQuand ils sont dorés, ajouter les pommes de terre épluchées et coupées en lamelles épaisses.\n\nÉTAPE 4\nRéserver.\n\nÉTAPE 5\nDans un bol, mélanger les oeufs, le basilic et le lait (ou la crème fraîche), du sel et du poivre.\n\nÉTAPE 6\nFaites précuire la pâte dans le four avec des haricots secs (par exemple) sur du papier sulfurisé pendant 15 minutes.\n\nÉTAPE 7\nMélanger les pommes de terre juste cuites, les oignons et la préparation oeufs et lait.\n\nÉTAPE 8\nRecouvrir de fromage et enfourner.	4	01:00:00	00:15:00	3	t
->>>>>>> 671380e1cb2e1a76699a57853373153220151a14
+16	Nouvelle recette test	toto et titi	lentilles.jpg	Faux carpacio	8	00:35:00	00:15:00	2	f
+17	test	démo	imagetest.jpg	zfergzerhrth	5	00:05:00	00:05:00	1	f
+18	nouvelle recette VEGAN	vegaaaaaaaaaaaan	noimage.jpg	iiii	1	00:10:00	00:10:00	3	t
 \.
 
 
 --
--- Data for Name: recipe_ingredient; Type: TABLE DATA; Schema: public; Owner: spedata
+-- Data for Name: recipe_ingredient; Type: TABLE DATA; Schema: public; Owner: recipesapp
 --
 
 COPY public.recipe_ingredient (id, recipe_id, ingredient_id, qty, unit_id) FROM stdin;
-<<<<<<< HEAD
-1	1	23	10	2
-2	2	3	1000	8
-3	3	20	3	1
-4	4	4	3	1
-5	5	19	4	1
-6	6	21	10	8
-7	7	22	10	8
-8	8	21	15	8
-9	9	6	40	4
-10	10	3	10	5
-11	11	8	30	6
-12	12	3	2	5
-13	13	20	1	7
-14	14	3	2	5
-15	15	1	20	1
-16	16	3	10	5
-17	17	2	5	1
-18	18	1	20	1
-19	19	4	1	1
-20	20	1	20	1
-21	1	3	10	5
-22	2	3	2	5
-23	3	3	2	5
-24	4	2	3	1
-25	5	5	5	1
-26	6	3	2	5
-27	7	2	5	1
-28	8	18	10	8
-29	9	4	5	1
-30	10	4	3	1
-31	11	18	1	1
-32	12	21	100	8
-33	13	5	1	1
-34	14	22	150	8
-35	15	21	1	8
-36	16	15	10	2
-=======
-43	9	44	75	8
-46	9	42	2	13
-44	9	40	250	8
-48	9	41	0.5	14
-45	9	17	45	8
-47	9	43	0.5	2
-52	13	18	2	1
-53	13	45	1	11
-54	13	35	1	11
-55	13	28	1	11
-56	13	46	1	11
-57	13	48	1	11
-58	13	47	1	1
-59	13	49	500	8
-60	13	32	1	11
-26	6	25	1	9
-24	6	18	1	1
-25	6	24	1	9
-22	6	20	1	1
-19	6	16	500	8
-21	6	6	100	8
-20	6	17	150	8
-23	6	19	7	6
-42	8	38	1	12
-39	8	37	1	11
-41	8	39	4	13
-36	8	34	3	1
-35	8	26	1	1
-37	8	35	1	11
-40	8	9	3	1
-38	8	8	10	6
-15	5	13	3	5
-16	5	12	2	3
-17	5	14	1.5	5
-18	5	15	1	1
-27	7	26	1	1
-28	7	27	1	4
-29	7	28	1	3
-30	7	33	10	6
-31	7	31	4	3
-32	7	32	4	10
-33	7	30	4	1
-34	7	29	1	4
-68	15	3	1	5
-69	15	4	30	1
-70	16	30	15	1
-72	17	4	30	1
-71	17	3	500	8
-64	14	38	2	12
-65	14	52	250	8
-63	14	51	6	13
-66	14	53	50	8
-62	14	50	10	6
-67	14	54	1	1
->>>>>>> 671380e1cb2e1a76699a57853373153220151a14
+175	16	68	10	2
+176	16	74	10	6
+155	16	71	10	5
+140	1	56	10	2
+141	2	57	100	8
+142	3	58	3	1
+143	4	59	3	1
+144	5	60	4	1
+145	6	61	10	8
+146	7	62	10	8
+147	8	63	15	8
+148	9	64	40	4
+149	10	65	10	5
+150	11	66	30	6
+151	12	67	2	5
+152	13	68	1	7
+153	14	69	2	5
+154	15	70	20	1
+156	17	72	5	1
+157	18	73	20	1
+158	19	74	1	1
+159	20	75	20	1
+160	1	76	10	5
+161	2	77	2	5
+162	3	78	2	5
+163	4	56	3	1
+164	5	57	5	1
+165	6	58	2	5
+166	7	59	5	1
+167	8	60	10	8
+168	9	61	5	1
+169	10	62	3	1
+170	11	63	1	1
+171	12	64	100	8
+172	13	65	1	1
+173	14	66	150	8
+174	15	67	1	8
 \.
 
 
 --
--- Data for Name: projects; Type: TABLE DATA; Schema: sqitch; Owner: spedata
+-- Data for Name: projects; Type: TABLE DATA; Schema: sqitch; Owner: recipesapp
 --
 
 COPY sqitch.projects (project, uri, created_at, creator_name, creator_email) FROM stdin;
-recipesApp	\N	2022-09-21 14:27:34.019949+00	killian audic	kaudic@audicserver
+recipesApp	\N	2022-11-29 14:02:59.117875+00	Ubuntu	ubuntu@S008371
 \.
 
 
 --
--- Data for Name: changes; Type: TABLE DATA; Schema: sqitch; Owner: spedata
+-- Data for Name: changes; Type: TABLE DATA; Schema: sqitch; Owner: recipesapp
 --
 
 COPY sqitch.changes (change_id, script_hash, change, project, note, committed_at, committer_name, committer_email, planned_at, planner_name, planner_email) FROM stdin;
-38b07ff45a969521ca1ef1f0756a904bcd3204fa	5b869f8b062aec7d1e3f65f015ebca12df4ba183	initdb	recipesApp	crÃ©ation des tables	2022-09-21 14:27:34.68951+00	killian audic	kaudic@audicserver	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
-d2f2b5326e52d6252881391dec60d8b166b2e71b	fa9dfa45789d54f5af716cc368688aa41f912e3b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	2022-09-21 14:27:34.790642+00	killian audic	kaudic@audicserver	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
-2ab8d775fd1607e1c56e9e2247516aa879456163	15c2b91a3affeeab62944fbd93bdbd40ffae8d22	alter_img_name	recipesApp	alter column recipe img_name	2022-09-21 14:27:34.874401+00	killian audic	kaudic@audicserver	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
-446f9ddebda012b5156edc56750c03a17500af63	3c4c7227194cdde185cdb7875c9334306f8de4c5	basket_field	recipesApp	ajout du champs basket	2022-09-21 14:27:34.957099+00	killian audic	kaudic@audicserver	2022-09-15 13:38:49+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
-3545440320746d8630fe0893a3ff131b14d0f353	d285cf2d71c412cadb871274bc5595fdbb86bad7	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	2022-09-21 14:27:35.049222+00	killian audic	kaudic@audicserver	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+38b07ff45a969521ca1ef1f0756a904bcd3204fa	5b869f8b062aec7d1e3f65f015ebca12df4ba183	initdb	recipesApp	crÃ©ation des tables	2022-11-29 14:02:59.295187+00	Ubuntu	ubuntu@S008371	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+d2f2b5326e52d6252881391dec60d8b166b2e71b	fa9dfa45789d54f5af716cc368688aa41f912e3b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	2022-11-29 14:02:59.383421+00	Ubuntu	ubuntu@S008371	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+2ab8d775fd1607e1c56e9e2247516aa879456163	15c2b91a3affeeab62944fbd93bdbd40ffae8d22	alter_img_name	recipesApp	alter column recipe img_name	2022-11-29 14:02:59.459372+00	Ubuntu	ubuntu@S008371	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+446f9ddebda012b5156edc56750c03a17500af63	3c4c7227194cdde185cdb7875c9334306f8de4c5	basket_field	recipesApp	ajout du champs basket	2022-11-29 14:02:59.543355+00	Ubuntu	ubuntu@S008371	2022-09-15 13:38:49+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+3545440320746d8630fe0893a3ff131b14d0f353	d285cf2d71c412cadb871274bc5595fdbb86bad7	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	2022-11-29 14:02:59.630882+00	Ubuntu	ubuntu@S008371	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
 \.
 
 
 --
--- Data for Name: dependencies; Type: TABLE DATA; Schema: sqitch; Owner: spedata
+-- Data for Name: dependencies; Type: TABLE DATA; Schema: sqitch; Owner: recipesapp
 --
 
 COPY sqitch.dependencies (change_id, type, dependency, dependency_id) FROM stdin;
@@ -321,10 +178,58 @@ COPY sqitch.dependencies (change_id, type, dependency, dependency_id) FROM stdin
 
 
 --
--- Data for Name: events; Type: TABLE DATA; Schema: sqitch; Owner: spedata
+-- Data for Name: events; Type: TABLE DATA; Schema: sqitch; Owner: recipesapp
 --
 
 COPY sqitch.events (event, change_id, change, project, note, requires, conflicts, tags, committed_at, committer_name, committer_email, planned_at, planner_name, planner_email) FROM stdin;
+deploy	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-11-29 14:02:59.296475+00	Ubuntu	ubuntu@S008371	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	d2f2b5326e52d6252881391dec60d8b166b2e71b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	{}	{}	{}	2022-11-29 14:02:59.384425+00	Ubuntu	ubuntu@S008371	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-11-29 14:02:59.460236+00	Ubuntu	ubuntu@S008371	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	446f9ddebda012b5156edc56750c03a17500af63	basket_field	recipesApp	ajout du champs basket	{}	{}	{}	2022-11-29 14:02:59.544169+00	Ubuntu	ubuntu@S008371	2022-09-15 13:38:49+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-11-29 14:02:59.631855+00	Ubuntu	ubuntu@S008371	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:15:58.590632+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:16:48.876235+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:17:29.197419+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:17:49.717463+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:18:11.528107+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:19:10.348776+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:20:45.972765+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:21:33.627553+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:22:13.344565+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:30:12.405605+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:30:38.865568+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:32:11.447814+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 08:32:39.382034+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	d2f2b5326e52d6252881391dec60d8b166b2e71b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	{}	{}	{}	2022-09-05 09:46:50.9838+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	d2f2b5326e52d6252881391dec60d8b166b2e71b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	{}	{}	{}	2022-09-05 09:47:05.220341+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 09:47:05.339582+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-05 09:47:12.331691+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	d2f2b5326e52d6252881391dec60d8b166b2e71b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	{}	{}	{}	2022-09-05 09:47:12.517431+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	d2f2b5326e52d6252881391dec60d8b166b2e71b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	{}	{}	{}	2022-09-06 10:02:48.686194+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-06 10:02:48.829311+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-06 10:02:55.312052+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-06 10:03:11.7309+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	d2f2b5326e52d6252881391dec60d8b166b2e71b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	{}	{}	{}	2022-09-06 10:03:11.839794+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-09 08:34:11.240831+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-09 08:34:22.535796+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-09 08:39:28.405616+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-09 08:40:30.361809+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-09 08:41:05.984244+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-09 08:43:57.930243+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-09 08:44:04.245571+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	446f9ddebda012b5156edc56750c03a17500af63	basket_field	recipesApp	ajout du champs basket	{}	{}	{}	2022-09-15 13:40:45.723068+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-15 13:38:49+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	446f9ddebda012b5156edc56750c03a17500af63	basket_field	recipesApp	ajout du champs basket	{}	{}	{}	2022-09-15 13:41:02.620955+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-15 13:38:49+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	446f9ddebda012b5156edc56750c03a17500af63	basket_field	recipesApp	ajout du champs basket	{}	{}	{}	2022-09-15 13:41:25.003906+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-15 13:38:49+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	446f9ddebda012b5156edc56750c03a17500af63	basket_field	recipesApp	ajout du champs basket	{}	{}	{}	2022-09-15 13:41:30.01142+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-15 13:38:49+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:43:47.555203+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+fail	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:47:19.573465+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:48:02.789378+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:53:21.714026+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:54:27.48422+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:55:51.441431+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:55:54.869658+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+revert	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:55:57.990362+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
+deploy	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	recipesApp	adding basket columns to the view	{}	{}	{}	2022-09-19 10:56:00.282469+00	Killian AUDIC	killi@LAPTOP-5GJ086M6	2022-09-19 10:41:36+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
 deploy	38b07ff45a969521ca1ef1f0756a904bcd3204fa	initdb	recipesApp	crÃ©ation des tables	{}	{}	{}	2022-09-21 14:27:34.690878+00	killian audic	kaudic@audicserver	2022-09-04 13:30:35+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
 deploy	d2f2b5326e52d6252881391dec60d8b166b2e71b	detailed_recipe	recipesApp	detailed recipes with ingredients and units	{}	{}	{}	2022-09-21 14:27:34.791485+00	killian audic	kaudic@audicserver	2022-09-05 09:44:44+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
 deploy	2ab8d775fd1607e1c56e9e2247516aa879456163	alter_img_name	recipesApp	alter column recipe img_name	{}	{}	{}	2022-09-21 14:27:34.875242+00	killian audic	kaudic@audicserver	2022-09-09 08:28:14+00	Killian AUDIC	killi@LAPTOP-5GJ086M6
@@ -334,16 +239,16 @@ deploy	3545440320746d8630fe0893a3ff131b14d0f353	refresh_detailed_recipe_view	rec
 
 
 --
--- Data for Name: releases; Type: TABLE DATA; Schema: sqitch; Owner: spedata
+-- Data for Name: releases; Type: TABLE DATA; Schema: sqitch; Owner: recipesapp
 --
 
 COPY sqitch.releases (version, installed_at, installer_name, installer_email) FROM stdin;
-1.1	2022-09-21 14:27:34.010578+00	killian audic	kaudic@audicserver
+1.1	2022-11-29 14:02:59.114547+00	Ubuntu	ubuntu@S008371
 \.
 
 
 --
--- Data for Name: tags; Type: TABLE DATA; Schema: sqitch; Owner: spedata
+-- Data for Name: tags; Type: TABLE DATA; Schema: sqitch; Owner: recipesapp
 --
 
 COPY sqitch.tags (tag_id, tag, project, change_id, note, committed_at, committer_name, committer_email, planned_at, planner_name, planner_email) FROM stdin;
@@ -351,35 +256,35 @@ COPY sqitch.tags (tag_id, tag, project, change_id, note, committed_at, committer
 
 
 --
--- Name: ingredient_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spedata
+-- Name: ingredient_id_seq; Type: SEQUENCE SET; Schema: public; Owner: recipesapp
 --
 
-SELECT pg_catalog.setval('public.ingredient_id_seq', 54, true);
-
-
---
--- Name: recipe_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spedata
---
-
-SELECT pg_catalog.setval('public.recipe_id_seq', 17, true);
+SELECT pg_catalog.setval('public.ingredient_id_seq', 78, true);
 
 
 --
--- Name: recipe_ingredient_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spedata
+-- Name: recipe_id_seq; Type: SEQUENCE SET; Schema: public; Owner: recipesapp
 --
 
-SELECT pg_catalog.setval('public.recipe_ingredient_id_seq', 72, true);
-
-
---
--- Name: type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spedata
---
-
-SELECT pg_catalog.setval('public.type_id_seq', 3, true);
+SELECT pg_catalog.setval('public.recipe_id_seq', 57, true);
 
 
 --
--- Name: unit_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spedata
+-- Name: recipe_ingredient_id_seq; Type: SEQUENCE SET; Schema: public; Owner: recipesapp
+--
+
+SELECT pg_catalog.setval('public.recipe_ingredient_id_seq', 176, true);
+
+
+--
+-- Name: type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: recipesapp
+--
+
+SELECT pg_catalog.setval('public.type_id_seq', 4, true);
+
+
+--
+-- Name: unit_id_seq; Type: SEQUENCE SET; Schema: public; Owner: recipesapp
 --
 
 SELECT pg_catalog.setval('public.unit_id_seq', 14, true);
