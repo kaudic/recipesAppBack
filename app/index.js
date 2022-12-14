@@ -17,6 +17,7 @@ const pathToLog = path.normalize(`${__dirname}/../public`);
 console.log(pathToLog);
 app.use(express.static(pathToLog));
 
+
 // routing
 app.use(router);
 

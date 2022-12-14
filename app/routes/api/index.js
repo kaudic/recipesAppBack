@@ -5,6 +5,8 @@ const ingredientRouter = require('./ingredient');
 const unitRouter = require('./unit');
 const typeRouter = require('./type');
 const basketRouter = require('./basket');
+const loginRouter = require('./login');
+
 
 const { apiController } = require('../../controllers/api');
 const { ApiError } = require('../../helpers/errorHandler');
@@ -18,6 +20,7 @@ router.use('/ingredients', ingredientRouter);
 router.use('/units', unitRouter);
 router.use('/types', typeRouter);
 router.use('/basket', basketRouter);
+router.use('/login', loginRouter);
 
 router.use(() => {
     throw new ApiError(404, 'API Route not found');

@@ -1,5 +1,6 @@
 // importation des différents package
 const https = require('https');
+const http = require('http');
 require('dotenv').config();
 const fs = require('fs');
 const app = require('./app');
@@ -23,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
     server = https.createServer(credentials, app);
 
 } else {
-    server = https.createServer(app);
+    server = http.createServer(app);
 
 }
 
