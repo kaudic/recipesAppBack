@@ -1,5 +1,5 @@
 const express = require('express');
-
+const authorization = require('../../middlewares/authorization');
 const validate = require('../../validation/validator');
 const schemaCreate = require('../../validation/schemas/unitCreateSchema');
 const schemaUpdate = require('../../validation/schemas/unitUpdateSchema');
@@ -26,7 +26,7 @@ router
      * @return {Unit} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .post(validate('body', schemaCreate), controllerHandler(controller.create))
+    .post(authorization, validate('body', schemaCreate), controllerHandler(controller.create))
     /**
      * PUT /api/units/{id}
      * @summary Update one unit
@@ -37,7 +37,7 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Unit not found - application/json
      */
-    .put(validate('body', schemaUpdate), controllerHandler(controller.update));
+    .put(authorization, validate('body', schemaUpdate), controllerHandler(controller.update));
 
 router
     .route('/:id(\\d+)')
@@ -60,6 +60,6 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Ingredient not found - application/json
      */
-    .delete(controllerHandler(controller.delete));
+    .delete(authorization, controllerHandler(controller.delete));
 
 module.exports = router;

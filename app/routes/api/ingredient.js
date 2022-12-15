@@ -3,6 +3,7 @@ const express = require('express');
 const validate = require('../../validation/validator');
 const schemaCreate = require('../../validation/schemas/ingredientCreateSchema');
 const schemaUpdate = require('../../validation/schemas/ingredientUpdateSchema');
+const authorization = require('../../middlewares/authorization');
 
 const { ingredientController: controller } = require('../../controllers/api');
 const controllerHandler = require('../../helpers/controllerHandler');
@@ -26,7 +27,7 @@ router
      * @return {Ingredient} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .post(validate('body', schemaCreate), controllerHandler(controller.create))
+    .post(authorization, validate('body', schemaCreate), controllerHandler(controller.create))
     /**
      * PUT /api/ingredients/{id}
      * @summary Update one ingredient
@@ -37,7 +38,7 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Ingredient not found - application/json
      */
-    .put(validate('body', schemaUpdate), controllerHandler(controller.update));
+    .put(authorization, validate('body', schemaUpdate), controllerHandler(controller.update));
 
 router
     .route('/:id(\\d+)')
@@ -61,6 +62,6 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Ingredient not found - application/json
      */
-    .delete(controllerHandler(controller.delete));
+    .delete(authorization, controllerHandler(controller.delete));
 
 module.exports = router;

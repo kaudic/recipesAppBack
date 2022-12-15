@@ -5,9 +5,13 @@ const { insertQueryGenerator, updateQueryGenerator } = require('../tools/queryGe
 
 module.exports = {
 
-  async checkCredentials() {
-    const result = await client.query('SELECT * FROM ingredient ORDER BY name ASC');
-    return result.rows;
+  async findOneByLogin(login) {
+    const result = await client.query('SELECT * FROM "user" WHERE login = $1', [login]);
+    if (result?.rows?.length >= 0) {
+      return result.rows[0];
+    } else {
+      return null;
+    }
   }
 
 };

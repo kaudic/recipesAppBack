@@ -3,6 +3,7 @@ const uploadImage = require('../../middlewares/uploadImages');
 const validate = require('../../validation/validator');
 const schemaCreate = require('../../validation/schemas/recipeCreateSchema');
 const schemaUpdate = require('../../validation/schemas/recipeUpdateSchema');
+const authorization = require('../../middlewares/authorization');
 // const sanitizeBody = require('../../validation/sanitizeHtml'); => caused me problem making a formData ?!
 
 const { recipeController: controller } = require('../../controllers/api');
@@ -27,7 +28,7 @@ router
      * @return {array<Recipe>} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .post(validate('body', schemaCreate), controllerHandler(controller.create))
+    .post(authorization, validate('body', schemaCreate), controllerHandler(controller.create))
     /**
      * PUT /api/recipes/{id}
      * @summary Update one recipe
@@ -38,7 +39,7 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Category not found - application/json
      */
-    .put(validate('body', schemaUpdate), controllerHandler(controller.update));
+    .put(authorization, validate('body', schemaUpdate), controllerHandler(controller.update));
 
 
 
@@ -63,7 +64,7 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Recipe not found - application/json
      */
-    .delete(controllerHandler(controller.delete));
+    .delete(authorization, controllerHandler(controller.delete));
 
 /**
  * POST /api/recipes/search
@@ -85,6 +86,6 @@ router
      * @tags Recipe
      * @return {} 204 - empty success response - application/json
      */
-    .put(uploadImage(), controllerHandler(controller.modifyImgName));
+    .put(authorization, uploadImage(), controllerHandler(controller.modifyImgName));
 
 module.exports = router;

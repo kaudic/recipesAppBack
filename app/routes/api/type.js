@@ -1,5 +1,5 @@
 const express = require('express');
-
+const authorization = require('../../middlewares/authorization');
 const { typeController: controller } = require('../../controllers/api');
 const controllerHandler = require('../../helpers/controllerHandler');
 
@@ -22,7 +22,7 @@ router
      * @return {Type} 200 - success response - application/json
      * @return {ApiError} 400 - Bad request response - application/json
      */
-    .post(controllerHandler(controller.create))
+    .post(authorization, controllerHandler(controller.create))
     /**
      * PUT /api/types
      * @summary Update one unit
@@ -32,7 +32,7 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Type not found - application/json
      */
-    .put(controllerHandler(controller.update));
+    .put(authorization, controllerHandler(controller.update));
 
 router
     .route('/:id(\\d+)')
@@ -55,6 +55,6 @@ router
      * @return {ApiError} 400 - Bad request response - application/json
      * @return {ApiError} 404 - Ingredient not found - application/json
      */
-    .delete(controllerHandler(controller.delete));
+    .delete(authorization, controllerHandler(controller.delete));
 
 module.exports = router;

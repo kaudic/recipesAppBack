@@ -20,4 +20,4 @@ const apiController = {
     },
 };
 
-module.exports = { apiController, recipeController, ingredientController, unitController, typeController, basketController };
+module.exports = { apiController, recipeController, ingredientController, unitController, typeController, basketController, loginController };
